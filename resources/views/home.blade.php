@@ -57,7 +57,7 @@
             @foreach($vendors as $vendor)
             <!-- instgram page single item start -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <a href="{{url('post/create')}}" class="d-block">
+                <a href="{{ url('post/create/'.$vendor->unique_id) }}" class="d-block">
                     <div class="instagram-page-wrap">
                         @if(is_null($vendor->image))
                         <img src="{{ $vendor->ig_profile_image }}" alt="List" class="img-fluid">
