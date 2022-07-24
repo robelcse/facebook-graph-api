@@ -1,0 +1,92 @@
+.app {
+    margin: 2%;
+}
+
+#erro_msg {
+    color: red;
+    font-size: 16px;
+}
+
+.payment-list{
+    position: relative;
+}
+
+.custom-pagination{
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+}
+
+.payment-list{
+    padding: 30px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .app-header {
+        padding: 15px;
+    }
+
+    .instagram-logo {}
+
+    .instagram-logo img {
+
+        float: right;
+    }
+
+    .pay-btn {
+        text-align: center;
+    }
+
+    .pay-btn button {
+        background: #ffc439;
+        padding: 10px 150px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .app-header {
+        padding: 15px;
+    }
+
+    .profile-logo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .profile-logo img {}
+
+    .username {}
+
+    .username h4 {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .instagram-logo {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .instagram-logo img {}
+
+
+    .pay-btn {
+        text-align: center;
+    }
+
+    .pay-btn button {
+
+        background: #ffc439;
+        padding: 10px 140px;
+    }
+
+    .pay-btn img {
+
+        height: 10px !important;
+        padding: 0px !important;
+
+    }
+}
+

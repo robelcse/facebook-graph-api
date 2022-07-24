@@ -1,0 +1,113 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media(min-width: 320px) and (max-width: 575px) {    
+    .navbar-toggler {
+        border-color: transparent;
+        padding: 0px;
+    }
+    .navbar-toggler:focus { 
+        box-shadow: none;
+    }
+
+    .navbar-toggler:focus {
+        outline: inherit;
+    }
+
+     .navbar-toggler i {
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .home-hero-text-wrap{
+        padding-top: 2rem;
+    }
+    .home-hero-text-wrap h1 {
+        font-size: 35px;
+        line-height: 43px;
+    }
+    .home-hero-text-wrap h1 span{
+        display: inline-block;
+    }
+    .home-hero-text-wrap p{
+        width: 100%;
+    }
+    .register-form-wrap{
+        padding: 1.5rem;
+    }
+    .register-form-wrap h1{
+        font-size: 16pt;
+        line-height: 20pt;
+    }
+    .register-form-wrap .d-flex {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .register-form-wrap .d-flex p{
+        margin-bottom: 1.4rem;
+    }
+    .register-form-wrap .d-flex .btn-submit{
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .account-list-head h2{
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 0.1rem;
+    }
+    .account-list-head p{
+        font-size: 12px;
+        line-height: 20px;
+       
+    }
+    .create_post_frm{
+        padding: 1.5rem;
+    }
+    .create_post_frm h1{
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .drop-zone{
+        width: 100%;
+    }
+    .drop-zone__thumb {
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .create_post_frm .btn-submit{
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .header_section .navbar-nav .nav-item .nav-link{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .header_section .d-flex .btn{
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .insta-page-text-wrap h5{
+        font-size: 16px;
+    }
+    .drop-zone__thumb { 
+        right: -62%; 
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

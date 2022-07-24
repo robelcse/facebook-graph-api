@@ -1,0 +1,443 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+ol,
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+i,
+span,
+input {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+}
+
+a,
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.invalid-feedback {
+    color: red;
+}
+
+/* sidebar css start */
+
+
+.header_section .navbar-nav .nav-item .nav-link {
+    font-weight: 400;
+    font-size: 12pt;
+    line-height: 19pt;
+    color: #fff;
+    transition: all linear .2s;
+    margin: auto 12px;
+    position: relative;
+}
+
+.header_section .navbar-nav .nav-item .nav-link:before {
+    position: absolute;
+    content: "";
+    left: 10%;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #fdc11f;
+    transition: all linear .3s;
+}
+
+.header_section .navbar-nav .nav-item .nav-link:hover:before {
+    width: 80%;
+}
+
+.header_section .navbar-nav .nav-item .nav-link.active {
+    color: #fdc11f;
+}
+
+.header_section .navbar-nav .nav-item .nav-link:hover {
+    color: #fdc11f;
+}
+
+
+.dashboard-logo-wrap{
+    padding: 1rem;
+    text-align: left;
+    margin-bottom: 1rem;
+    padding-top: 1.6rem;
+}
+.dashboard-logo-wrap img{
+    width: 150px;
+}
+
+.dashboard-sidebar-wrap{
+    height: 100vh;
+    background-color: #20364b;
+}
+
+.dashboard-sidebar-menu{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.dashboard-sidebar-menu li a{
+    font-size: 15px;
+    line-height: 21px;
+    color: #fff;
+    font-weight: 500;
+    padding: .7rem 1rem;
+    margin-bottom: .5rem;
+    background-color: transparent;
+    display: block;
+    border-radius: 30px;
+    transition: all linear .1s;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-sidebar-menu li a i{
+    margin-right: .7rem;
+    width: 20px;
+}
+
+.dashboard-sidebar-menu li a.active,
+.dashboard-sidebar-menu li a:hover{
+    background-color: #fff;
+    color: #20364b;
+}
+
+.dashboard-sidebar-menu .d-flex a{
+    background-color: #f26622;
+    display: block;
+    width: 100%;
+}
+/* sidebar css end */
+
+/* dashboard header css start */
+.dashboard-header-wrap{
+    padding: 1rem 2rem;
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header-wrap h6{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #20364b;
+}
+
+.dashboard-header-wrap h6 span{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.dashboard-header-wrap a{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    padding: 9px 20px;
+    border: 1px solid #20364b;
+    border-radius: 30px;
+    transition: all linear .2s;
+    background-color: #20364b;
+}
+/* dashboard header css end */
+
+
+/* dashboad body css start */
+.dashboard-body-wrap{
+    padding: 1.5rem;
+}
+.vendor-information-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.vendor-information-head h1{
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 600;
+    color: #20364b; 
+}
+.vendor-information-head h4{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #20364b; 
+}
+
+.vendor-information-head h4 a{
+    color: #f26622;
+}
+
+.vendor-info-box{
+    padding: 1.3rem 2rem;
+    text-align: center;
+    background-color: #20364b;
+    border-radius: 12px;
+    min-height: 113px;
+}
+
+.vendor-info-box h5{
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 500;
+    color: #fff; 
+}
+.vendor-info-box h5 span{
+    font-size: 27px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #fff; 
+    display: block;
+    margin-top: 1rem;
+}
+
+.earning_table table{
+    width: 100%; 
+    border-collapse: separate !important;
+    border-spacing: 0; 
+    border-radius: 12px;
+}  
+.earning_table table tr th,
+.earning_table table tr td{
+    padding: .7rem 1rem;
+    border: 1px solid #20364b; 
+    font-size: 15px;
+    line-height: 21px;
+    color: #20364b;
+    font-weight: 500;
+} 
+.earning_table table tr th{
+    font-weight: 600;
+}
+.earning_table table tr:first-child th:first-child{
+    border-radius: 12px 0px 0px 0px;
+}
+.earning_table table tr:first-child th:last-child{
+    border-radius: 0px 12px 0px 0px;
+} 
+.earning_table table tr:last-child td:first-child{
+    border-radius: 0px 0px 0px 12px;
+}
+.earning_table table tr:last-child td:last-child{
+    border-radius: 0px 0px 12px 0px;
+}
+
+.earning_table .btn-primary{
+    background-color: #f26622;
+    border-color: #f26622;
+    border-radius: 30px;
+    padding: .5rem 1.2rem;
+}
+
+.profile-view-wrap .card-header {
+	padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-view-wrap .card-body {
+    padding: 1rem 2rem;
+}
+.profile-view-wrap .card-body table tr td{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #20364b;
+    padding: .7rem 0;
+}
+.profile-view-wrap .card-body table tr td span{
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #20364b;
+}
+.profile-update-wrap{
+    padding: 1rem 2rem;
+}
+
+
+.profile-update-wrap .text-end{
+    margin-top: 1.8rem;
+}
+.profile-update-wrap .form-group {
+    margin-bottom: 1rem;
+}
+.profile-update-wrap .form-group label {
+    font-size: 13pt;
+    line-height: 20pt;
+    color: #201C18;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.profile-update-wrap .form-group .form-control {
+    font-size: 16px;
+    line-height: 21px;
+    color: #201C18;
+    font-weight: 400;
+    height: 45px;
+    border: 1px solid rgba(33, 28, 23, 0.367);
+    border-radius: 25px;
+    padding-left: 20px;
+}
+
+.profile-update-wrap .form-group .form-control:focus-within {
+    box-shadow: none;
+    border-color: #fdc11f;
+}
+ 
+
+.profile-update-wrap .btn-submit {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #201C18;
+    padding: 12px 40px;
+    border: 1px solid #fdc11f;
+    border-radius: 30px;
+    transition: all linear .2s;
+    background-color: #fdc11f;
+}
+
+.profile-update-wrap .btn-submit:hover {
+    background-color: #fff;
+}
+
+.earning_table_admin tr td img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid #20364b;
+    object-fit: cover;
+}
+
+/* dashboad body css end */
+
+
+
+/* mobile menu css start */
+.mobile_menu_wrap {
+    background: #20364b;
+    width: 0%;
+    min-height: 100%;
+    margin-left: auto;
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+.nav_close {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.nav_close img {
+    width: 140px;
+}
+
+.nav_close .closebtn i {
+    font-size: 30px;
+    color: #fff;
+}
+
+.mobile_main_mnu ul {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.mobile_main_mnu ul li a { 
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.mobile_main_mnu ul li a.active {
+    color: #D68813;
+}
+
+.mobile_menu_bttn {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 3rem;
+}
+ 
+.mobile_menu_bttn a{
+    background: #D68813;
+    border: 1px solid #D68813;
+    border-radius: 8px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    display: block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 1.5rem;
+    transition: all linear .3s;
+}
+
+.mobile_menu_bttn a:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+} 
+
+/* mobile menu css end */

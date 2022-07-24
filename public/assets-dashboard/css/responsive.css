@@ -1,0 +1,107 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media(min-width: 320px) and (max-width: 575px) {    
+    .dashboard-sidebar-wrap{
+        height: auto; 
+    }
+    .dashboard-logo-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .dashboard-logo-wrap a i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .dashboard-header-wrap{
+        padding: 1rem;
+    }
+    .dashboard-header-wrap h6{
+        font-size: 14px;
+    }
+    .vendor-information-head{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .vendor-information-head h1{
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .dashboard-body-wrap{
+        padding: 1rem;
+    }
+    .vendor-information-head h4{
+        font-size: 16px;
+        line-height: 21px;
+        margin-top: 1rem;
+    }
+    .vendor-info-box{
+        margin-bottom: 1.5rem;
+        padding: .6rem;
+    }
+    .vendor-info-box h5{
+        font-size: 13px;
+        line-height: 19px;
+    }
+    .earning_table table{
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .earning_table table tr th, .earning_table table tr td{
+        padding: .5rem;
+        line-height: 16px;
+        font-size: 12px;
+    }
+    .profile-view-wrap .card-body,
+    .profile-view-wrap .card-header{
+        padding: 1rem;
+    }
+    .profile-view-wrap .card-body table tr td span,
+    .profile-view-wrap .card-body table tr td{
+        font-size: 14px;
+    }
+    .profile-update-wrap{
+        padding: .4rem;
+    }
+    .profile-update-wrap .btn-submit{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .dashboard-sidebar-menu{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .dashboard-sidebar-menu li a{
+        font-size: 13px;
+        padding: .7rem .8rem ;
+    }
+    .vendor-information-head{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .vendor-information-head h1{
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 1rem;
+    }
+    .vendor-info-box{
+        height: 132px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
