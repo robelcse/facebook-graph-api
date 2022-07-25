@@ -17,7 +17,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
                                     <label for="facebook_email">Facebook Email</label>
-                                    <input type="text" class="form-control" id="image_exit" name="image_exit" value="{{ $vendor->image }}">
+                                    <input type="hidden" class="form-control" id="image_exit" name="image_exit" value="{{ $vendor->image }}">
                                     <input type="email" class="form-control" id="facebook_email" name="facebook_email" value="{{ $vendor->facebook_email ? $vendor->facebook_email: old('facebook_email')  }}">
                                     @if($errors->has('facebook_email'))
                                     <div class="error-msg">{{ $errors->first('facebook_email') }}</div>

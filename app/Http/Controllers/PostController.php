@@ -195,14 +195,14 @@ class PostController extends Controller
             if (isset($request_images[$i])) {
                 $currentDate = Carbon::now()->toDateString();
                 $imagename = $currentDate . '-' . uniqid() . '.' . $request_images[$i]->getClientOriginalExtension();
-                if (!file_exists('uploads/posts_image')) {
-                    mkdir('uploads/posts_image', 0777, true);
+                if (!file_exists('public/uploads/posts_image')) {
+                    mkdir('public/uploads/posts_image', 0777, true);
                 }
 
                 $img_arr[] = $imagename;
-                $request_images[$i]->move('uploads/posts_image', $imagename);
+                $request_images[$i]->move('public/uploads/posts_image', $imagename);
 
-                $image_url = url('uploads/posts_image/' . $imagename);
+                $image_url = url('public/uploads/posts_image/' . $imagename);
 
                 $img_urls[] = $image_url;
             }

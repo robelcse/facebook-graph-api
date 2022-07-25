@@ -62,7 +62,18 @@
               <li><a href="{{ url('vendor/dashboard') }}" class="{{ Request::is('vendor/dashboard')  ? ' active' : '' }}"><i class="fas fa-home"></i> Dashboard</a></li>
 
               <li><a href="{{ url('vendor/earning') }}" class="{{ Request::is('vendor/earning')  ? ' active' : '' }}"><i class="fas fa-dollar-sign"></i> Earning</a></li>
+              <?php 
+               $unique_id  = Illuminate\Support\Facades\Auth::user()->unique_id;
+               if(!is_null($unique_id))
+               {
+                  $vendor = App\Models\Vendor::where('unique_id',$unique_id)->first();
+               }
+              
+              ?>
+             
+              @if(!is_null($vendor) && !is_null($vendor->facebook_email) && !is_null($vendor->facebook_profile_link) && !is_null($vendor->paypal_email) && !is_null($vendor->instagram_profile_link) )
               <li><a href="{{ url('vendor/appsetting') }}" class="{{ Request::is('vendor/appsetting')  ? ' active' : '' }}"><i class="fas fa-cog"></i> App Setting</a></li>
+              @endif
               <li><a href="{{ url('vendor/profile') }}" class="{{ Request::is('vendor/profile')  ? ' active' : '' }}"><i class="fas fa-user-tie"></i> Profile</a></li>
               <li><a href="{{ url('vendor/payment/request') }}" class="{{ Request::is('vendor/payment/request')  ? ' active' : '' }}"><i class="fas fa-money-bill"></i> Payment Request</a></li>
               

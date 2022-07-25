@@ -169,13 +169,13 @@ class VendorController extends Controller
         if (isset($image)) {
             $currentDate = Carbon::now()->toDateString();
             $imagename = $currentDate . '-' . uniqid() . '.' . $image->getClientOriginalExtension();
-            if (!file_exists('uploads/vendorprofile')) {
-                mkdir('uploads/vendorprofile', 0777, true);
+            if (!file_exists('public/uploads/vendorprofile')) {
+                mkdir('public/uploads/vendorprofile', 0777, true);
             }
             if (!is_null($vendor->image)) {
-                unlink('uploads/vendorprofile/' . $vendor->image);
+                unlink('public/uploads/vendorprofile/' . $vendor->image);
             }
-            $image->move('uploads/vendorprofile', $imagename);
+            $image->move('public/uploads/vendorprofile', $imagename);
         } else {
             $imagename = $vendor->image;
         }
