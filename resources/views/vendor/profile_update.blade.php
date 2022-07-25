@@ -44,6 +44,15 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-group">
+                                    <label for="venmo_email">Venmo Email</label>
+                                    <input type="email" class="form-control" id="venmo_email" name="venmo_email" value="{{ $vendor->venmo_email ? $vendor->venmo_email:old('venmo_email') }}">
+                                    @if($errors->has('venmo_email'))
+                                    <div class="error-msg">{{ $errors->first('venmo_email') }}</div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
                                     <label for="email">Instagram Profile Link</label>
                                     <input type="text" class="form-control" id="instagram_profile_link" name="instagram_profile_link" value="{{ $vendor->instagram_profile_link ? $vendor->instagram_profile_link:old('instagram_profile_link') }}">
                                     @if($errors->has('instagram_profile_link'))

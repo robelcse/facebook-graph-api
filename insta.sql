@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2022 at 02:46 PM
+-- Generation Time: Jul 25, 2022 at 01:05 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -67,7 +67,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2022_07_19_084721_add_app_secret_to_vendors_table', 1),
 (12, '2022_07_20_093816_add_ig_username_to_vendors_table', 1),
 (13, '2022_07_20_093838_add_ig_profile_image_to_vendors_table', 1),
-(14, '2022_07_21_055153_add_image_to_vendors_table', 2);
+(14, '2022_07_21_055153_add_image_to_vendors_table', 1),
+(15, '2022_07_23_055421_create_postprices_table', 1),
+(16, '2022_07_25_110238_add_venmo_email_to_vendors_table', 2);
 
 -- --------------------------------------------------------
 
@@ -104,6 +106,19 @@ CREATE TABLE `payments` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `postprices`
+--
+
+CREATE TABLE `postprices` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `post_price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -127,8 +142,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `image`, `content`, `image_flug`, `content_flug`, `status`, `ig_account`, `user_unique_id`, `ig_account_owner_unique_id`, `created_at`, `updated_at`, `access_token`) VALUES
-(1, '[\"http:\\/\\/localhost:8000\\/uploads\\/posts_image\\/2022-07-20-62d7dee221087_instagram.jpg\"]', 'my_post', '1', '1', 0, '17841404804688719', NULL, '62d7de6c45678', '2022-07-20 17:54:27', '2022-07-20 17:54:27', 'EAAOyUbzPRwoBAFweLWoCWKYegT3ZAtDhOWUinNZCzfrcgIMdij9EsoMOlBbO9EjzrZBBRlaaJnSKTGa5VOOJd64XaHSaIYwSGw0GZBbjgmtfZCEIDEGZAkRDQVZA7VoeXiwlcXzx1XTOxXdkfYhs02t1GxmnLjL5F4XZAMTEFymsHvO8I0yBjkAsZBGhy2o6k7RFgwADU3Iy521147HrDGxX1nHzZAawLTUpO8kqmkK24qdlK3ZC9SWeAvY'),
-(2, '[\"http:\\/\\/localhost:8000\\/uploads\\/posts_image\\/2022-07-21-62d8f7485e8bf_instagram.jpg\"]', 'Et dicta et ea nesci', '1', '1', 0, '17841404804688719', NULL, '62d7de6c45678', '2022-07-21 13:50:49', '2022-07-21 13:50:49', 'EAAOyUbzPRwoBAOTD6LnA3RBlgaw5ZCgRuls0Pmpmo01JZChZC8wD7dms7iRjRLvN1OV8R35M5O0wN7eUzaewWDhcADxjwVgOkn8zBYe46fSitwQoovPA4e7dGbVfQ84PWr4GQAEygCWS2QgdcnvNt5kW6FxdeoNltWwwdx1z2lq7AhwciUHZCjBxOsv9nPAZD');
+(1, '[\"http:\\/\\/localhost\\/Instagram-graph-api\\/public\\/uploads\\/posts_image\\/2022-07-25-62de23c4b141b.jpg\"]', 'my_post', '1', '1', 0, '17841404804688719', NULL, '62de1cca5e618', '2022-07-25 12:01:56', '2022-07-25 12:01:56', 'EAAOyUbzPRwoBAIAGDjkD66ikMcujAY74UtuuWZC8WfVeRNmFZActEswPDDgwD4KuQ3ZAvYk8exy3pf5UHb37v63Iyt75aO2XEnnZCl1NL2hr9yUZC1kvkKH5PJDRZCdPMbrFo3RxBbp8xgQDmjBVJPCaogfJ3iD8gXAZBVwZApTA66g1ZAU2YVcRiQ5ewrf7ZAmEgZD');
 
 -- --------------------------------------------------------
 
@@ -157,8 +171,7 @@ CREATE TABLE `transanctions` (
 --
 
 INSERT INTO `transanctions` (`id`, `user_paypal`, `ig_account_owner_paypal`, `post_id`, `ig_account`, `amount`, `transanction_id`, `status`, `user_unique_id`, `ig_account_owner_unique_id`, `created_at`, `updated_at`, `pay_request`) VALUES
-(1, 'sendinfo98-buyer@gmail.com', 'mdrobel.cse@paypal.com', '1', '17841404804688719', 450, '9U156199GW0489604', 1, NULL, '62d7de6c45678', '2022-07-20 17:54:53', '2022-07-20 17:56:07', 1),
-(2, 'sendinfo98-buyer@gmail.com', 'mdrobel.cse@paypal.com', '2', '17841404804688719', 450, '27C45945JS113174M', 0, NULL, '62d7de6c45678', '2022-07-21 13:51:15', '2022-07-21 13:51:15', 0);
+(1, 'sendinfo98-buyer@gmail.com', 'mdrobel.cse@paypal.com', '1', '17841404804688719', 100, '2CG62111PA252493B', 0, NULL, '62de1cca5e618', '2022-07-25 12:02:22', '2022-07-25 12:02:22', 0);
 
 -- --------------------------------------------------------
 
@@ -183,8 +196,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_phone`, `unique_id`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@app.com', NULL, '62d7de44ea4e2', '$2y$10$rThyCRG57xZz4yL8ciBQBeXCYfPDUbdfhs7U9yQv2HOLlthKmFOTW', 1, '2022-07-20 17:51:49', '2022-07-20 17:51:49'),
-(2, 'Vendor', 'vendor@app.com', NULL, '62d7de6c45678', '$2y$10$rsT/or.HG8PKd4quMaNuu.cX2GWFWIj.g/BY5Dg9NL/R1pvYyWesC', 2, '2022-07-20 17:52:28', '2022-07-20 17:52:28');
+(1, 'Admin', 'admin@gmail.com', NULL, '62de1c8ddf8e4', '$2y$10$ZKZkoRMojFDFA5KBLdvG9uqbOIeKUj4v6AnitiryJfWjG/UpKTyBK', 1, '2022-07-25 11:31:47', '2022-07-25 11:31:47'),
+(2, 'Vendor', 'vendor@gmail.com', NULL, '62de1cca5e618', '$2y$10$eDCYVGv3GlMJeMCvAVP1Re2eiGcOoatKZkEtPN2bEs9dPxLKKamHW', 2, '2022-07-25 11:32:10', '2022-07-25 11:32:10');
 
 -- --------------------------------------------------------
 
@@ -209,15 +222,16 @@ CREATE TABLE `vendors` (
   `app_secret` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ig_username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ig_profile_image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `venmo_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `vendors`
 --
 
-INSERT INTO `vendors` (`id`, `ig_account`, `access_token`, `facebook_email`, `facebook_profile_link`, `paypal_email`, `instagram_profile_link`, `post_price`, `unique_id`, `status`, `created_at`, `updated_at`, `app_id`, `app_secret`, `ig_username`, `ig_profile_image`, `image`) VALUES
-(1, '17841404804688719', 'EAAOyUbzPRwoBAOTD6LnA3RBlgaw5ZCgRuls0Pmpmo01JZChZC8wD7dms7iRjRLvN1OV8R35M5O0wN7eUzaewWDhcADxjwVgOkn8zBYe46fSitwQoovPA4e7dGbVfQ84PWr4GQAEygCWS2QgdcnvNt5kW6FxdeoNltWwwdx1z2lq7AhwciUHZCjBxOsv9nPAZD', 'mdrobel.cse@facebook.com', 'https://www.facbook.com/robelcse', 'mdrobel.cse@paypal.com', 'https://www.instagram.com/mdrobelcse', 450, '62d7de6c45678', 2, '2022-07-20 17:52:28', '2022-07-21 13:35:05', '1040489059927818', '718977c5b653ecbddd13818e91f353c8', 'mdrobelcse', 'https://scontent.frjh1-1.fna.fbcdn.net/v/t51.2885-15/20633349_359099417857476_379813531467382784_a.jpg?_nc_cat=107&ccb=1-7&_nc_sid=86c713&_nc_ohc=Q_lGK9h-1usAX-CyPDn&_nc_ht=scontent.frjh1-1.fna&edm=AJdBtusEAAAA&oh=00_AT80Q2aFpc0CIhKMKkcErlGD7wojBCpcPAg6LjhVGtEIfg&oe=62DED42A', '2022-07-21-62d8f37cbc31e.jpg');
+INSERT INTO `vendors` (`id`, `ig_account`, `access_token`, `facebook_email`, `facebook_profile_link`, `paypal_email`, `instagram_profile_link`, `post_price`, `unique_id`, `status`, `created_at`, `updated_at`, `app_id`, `app_secret`, `ig_username`, `ig_profile_image`, `image`, `venmo_email`) VALUES
+(1, '17841404804688719', 'EAAOyUbzPRwoBAIAGDjkD66ikMcujAY74UtuuWZC8WfVeRNmFZActEswPDDgwD4KuQ3ZAvYk8exy3pf5UHb37v63Iyt75aO2XEnnZCl1NL2hr9yUZC1kvkKH5PJDRZCdPMbrFo3RxBbp8xgQDmjBVJPCaogfJ3iD8gXAZBVwZApTA66g1ZAU2YVcRiQ5ewrf7ZAmEgZD', 'mdrobel.cse@facebook.com', 'https://www.facbook.com/robelcse', 'mdrobel.cse@paypal.com', 'https://www.instagram.com/mdrobelcse', 100, '62de1cca5e618', 2, '2022-07-25 11:32:10', '2022-07-25 18:04:29', '1040489059927818', '718977c5b653ecbddd13818e91f353c8', 'mdrobelcse', 'https://scontent.frjh1-1.fna.fbcdn.net/v/t51.2885-15/20633349_359099417857476_379813531467382784_a.jpg?_nc_cat=107&ccb=1-7&_nc_sid=86c713&_nc_ohc=RC9T1m5C3oEAX9VnyT9&_nc_ht=scontent.frjh1-1.fna&edm=AJdBtusEAAAA&oh=00_AT-imN9HVhBD2-wunhJ_d0xFigh3S6qAavSnAPKtx9reYg&oe=62E2C8AA', '2022-07-25-62de232b5efb8.jpg', 'mdrobel.cse@venmo.com');
 
 --
 -- Indexes for dumped tables
@@ -246,6 +260,12 @@ ALTER TABLE `password_resets`
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `postprices`
+--
+ALTER TABLE `postprices`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -286,7 +306,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `payments`
@@ -295,28 +315,34 @@ ALTER TABLE `payments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `postprices`
+--
+ALTER TABLE `postprices`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `transanctions`
 --
 ALTER TABLE `transanctions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

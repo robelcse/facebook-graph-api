@@ -141,7 +141,7 @@ class VendorController extends Controller
     public function profileUpdate(Request $request)
     {
 
-       
+
 
         $post_prices = Postprice::all();
         if (count($post_prices) != 0) {
@@ -154,9 +154,10 @@ class VendorController extends Controller
             'facebook_email' => 'required|email',
             'facebook_profile_link' => 'required',
             'paypal_email' => 'required|email',
+            'venmo_email' => 'required|email',
             'instagram_profile_link' => 'required',
             'post_price' => 'required|numeric|max:' . $max_post_price,
-            'image'=>"required_if:image_exit,==,null"
+            'image' => "required_if:image_exit,==,null"
         ]);
 
 
@@ -185,6 +186,7 @@ class VendorController extends Controller
                 'facebook_email' => $request->facebook_email,
                 'facebook_profile_link' => $request->facebook_profile_link,
                 'paypal_email' => $request->paypal_email,
+                'venmo_email' => $request->venmo_email,
                 'instagram_profile_link' => $request->instagram_profile_link,
                 'post_price' => $request->post_price,
                 'image' => $imagename
