@@ -141,6 +141,7 @@ class VendorController extends Controller
     public function profileUpdate(Request $request)
     {
 
+       
 
         $post_prices = Postprice::all();
         if (count($post_prices) != 0) {
@@ -155,7 +156,11 @@ class VendorController extends Controller
             'paypal_email' => 'required|email',
             'instagram_profile_link' => 'required',
             'post_price' => 'required|numeric|max:' . $max_post_price,
+            'image'=>"required_if:image_exit,==,null"
         ]);
+
+
+        //return $request->all();
 
         $vendor =  Vendor::where('unique_id', Auth::user()->unique_id)->first();
 
